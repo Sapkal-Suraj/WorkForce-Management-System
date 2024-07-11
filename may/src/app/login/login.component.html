@@ -1,0 +1,19 @@
+<!-- login.component.html -->
+
+<div class="image-container">
+  <img src="../assets/blackred.webp" alt="Login Image">
+  <div class="login-container">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" backg>
+          <div class="form-group">
+            
+              <input  placeholder="Type your name" type="text" id="username" name="username" [(ngModel)]="username" class="form-control" required>
+          </div>
+          <div class="form-group">
+             
+              <input  placeholder="Type your password" type="password" id="password" name="password" [(ngModel)]="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+  </div>
+</div>

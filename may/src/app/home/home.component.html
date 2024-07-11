@@ -1,0 +1,68 @@
+
+<div class="container-fluid">
+    <div class="image-container">
+        <img src="../assets/workforcemgt.jpg" alt="Login Image">
+    </div>
+    <div class="container-fluid">
+        <app-header></app-header>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col">
+            <div>
+                <button routerLink="/addemp" class="btn btn-success">Add Employee</button>
+                <button (click)="onUpdate()" class="btn btn-warning">Update Employee </button>
+
+                <button (click)="onDelete()" class="btn btn-danger" >Delete Employee</button>
+
+            </div>
+            <br>
+            <table class="tabletable-striped table-bordered">
+                <thead class="tableheade">
+                    <tr>
+                        <th>SR No.</th>
+                        <th>Action</th>
+                        <th>Name</th>
+                        <th>department</th>
+                        <th>Status</th>
+                        <th>created Date</th>
+                        <th>Created By </th>
+                        <th>Updated Date </th>
+                        <th>Updated By</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+         
+                  <tbody>
+                        <tr *ngFor="let item of empData;index as i" >
+                            <td> {{i+1}} </td>
+                            <td><input (click)="onRadio(item.id)" type="radio" name="record"></td>
+                            <td> <a routerLink="['/details',item.id]"> {{item.name}} </a></td>
+                            <td> {{item.depeartment}} </td>
+                            <td ><h4><span [ngClass]="{
+                               'badge':true,
+                               'rounded-pill':true,
+                               'bg-success':item.status.toLowerCase()=== 'active',
+                               'bg-warning':item.status.toLowerCase()=== 'inactive',
+                               'bg-danger':item.status.toLowerCase()=== 'suspend'
+                            }" >{{item.status}}</span></h4>   </td>
+                            <td> {{item.createddtm | date}} </td>
+                            <td> {{item.createdby}} </td>
+                            <td> {{item.updateddtm|date}} </td>
+                            <td> {{item.updatedby}} </td>
+                            <td> {{item.country ? item.country.cname : 'N/A'}} </td>
+
+                            <!-- <td> {{item.country.cname}} </td> -->
+                        </tr>
+                    </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!-- <div class="="cantainer mt -5>
+    <button type="button" class="btn btn-primary">Bootstrap button</button>
+</div> -->

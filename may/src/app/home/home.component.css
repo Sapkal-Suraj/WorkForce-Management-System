@@ -1,0 +1,43 @@
+table-dark{
+    color: blueviolet;
+}
+tableheade{
+background-color: black;
+}
+button{
+    margin: 10px;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1; /* Ensure the image container is behind other content */
+}
+
+
+
+.container-fluid {
+    padding: 20px; /* Adjust padding as needed */
+    margin-top: 20px; /* Adjust margin-top as needed */
+    background-color: rgb(242, 217, 217); /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+.tableheade{
+    background-color: rgb(141, 141, 223);
+}
+.tabletable-striped table-bordered{
+    background-color: blueviolet;
+}
